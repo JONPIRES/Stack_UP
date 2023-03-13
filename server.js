@@ -19,7 +19,7 @@ app.get('/', (req,res) =>{
     res.render('home')
 })
 
-app.use('/users',users)
+app.use('',users)
 
 
 app.get("/*" , (req,res) =>{
