@@ -38,7 +38,8 @@ app.get('/', (req,res) =>{
 })
 
 app.use('/posts', posts)
-app.use('',users)
+
+app.use('/users',users)
 
 
 app.get("/*" , (req,res) =>{
