@@ -7,4 +7,7 @@ router.get('/signup', (req,res)=>{
     res.render('user/signup.ejs')
 })
 
+
+
+
 module.exports = router;

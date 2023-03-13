@@ -22,6 +22,9 @@ const postSchema = new mongoose.Schema(
         },
         prediction: {
             type:String
+        },
+        comments:{
+            type:String
         }
     },
     {
@@ -29,6 +32,6 @@ const postSchema = new mongoose.Schema(
     }
 );
 
-const Posts = mongoose.model('Posts', userSchema);
+const Posts = mongoose.model('Posts', postSchema);
 
 module.exports = Posts;
