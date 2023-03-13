@@ -1,6 +1,6 @@
 <%- include('./partials/headAndNav') %>
 <div class="container">
-    <Form class="form" method="POST" action="/post">
+    <Form class="form" method="POST" action="/posts/newPost">
         <div>
             <label for="name">Enter username</label>
             <input type="text" name="name" id="name">
@@ -21,7 +21,7 @@
             <label for="prediction">Price prediction</label>
             <input type="text" name="prediction" id="prediction">
         </div>
-        <input type="submit" value="Submit new pokemon">
+        <input type="submit" value="Submit new post">
     </Form>
 
 </div>
