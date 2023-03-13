@@ -17,7 +17,7 @@ try{
 }
 })
 
-router.get('/create', (req,res)=>{
+router.get('/newPost', (req,res)=>{
     res.render('posts/new.ejs')
 })
 
