@@ -1,3 +1,28 @@
 <%- include('./partials/headAndNav') %>
+<div class="container">
+    <Form class="form" method="POST" action="/post">
+        <div>
+            <label for="name">Enter username</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div>
+            <label for="compName">Enter compName</label>
+            <input type="text" name="compName" id="compName">
+        </div>
+        <div>
+            <label for="industry">What industry?</label>
+            <input type="text" name="industry" id="industry">
+        </div>
+        <div>
+            <label for="upDown">bullish or bearish</label>
+            <input type="text" name="upDown" id="upDown">
+        </div>
+        <div>
+            <label for="prediction">Price prediction</label>
+            <input type="text" name="prediction" id="prediction">
+        </div>
+        <input type="submit" value="Submit new pokemon">
+    </Form>
 
+</div>
 <%- include('./partials/footer') %>
