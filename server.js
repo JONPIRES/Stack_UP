@@ -3,6 +3,7 @@ const app = express();
 
 const methodOverride = require('method-override');
 
+const{users, posts} = require('./controllers')
 
 
 app.set('view engine', 'ejs');
@@ -18,6 +19,7 @@ app.get('/', (req,res) =>{
     res.render('home')
 })
 
+app.use('/users',users)
 
 
 app.get("/*" , (req,res) =>{
