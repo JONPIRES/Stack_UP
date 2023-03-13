@@ -17,6 +17,12 @@ try{
 }
 })
 
+router.get('/create', (req,res)=>{
+    res.render('posts/new.ejs')
+})
+
+
+
 router.post('/newPost', async (req,res,next)=>{
     try{
         const newPost = await Posts.create(req.body)
@@ -28,3 +34,5 @@ router.post('/newPost', async (req,res,next)=>{
     }
 })
 
+
+module.exports = router;
