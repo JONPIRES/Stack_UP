@@ -10,3 +10,6 @@
 
 
 Strech Goals - 
+
+- comments in predictions
+- Add pagiantion to the page with the predictions
