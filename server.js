@@ -18,6 +18,7 @@ app.use(methodOverride('_method'));
 app.get('/', (req,res) =>{
     res.render('home')
 })
+
 app.use('/posts', posts)
 app.use('',users)
 

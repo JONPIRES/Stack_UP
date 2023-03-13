@@ -17,6 +17,12 @@ try{
 }
 })
 
+router.get('/create', (req,res)=>{
+    res.render('posts/new.ejs')
+})
+
+
+
 router.post('/newPost', async (req,res,next)=>{
     try{
         const newPost = await Posts.create(req.body)
@@ -28,3 +34,19 @@ router.post('/newPost', async (req,res,next)=>{
     }
 })
 
+router.get('/posts/:id', async (req, res, next) => {
+    try {
+        const post = await Posts.findById(req.params.id);
+        console.log(post);
+        const context = {
+            post: post
+        }
+        res.render('posts/show.ejs', context);
+    } catch(err) {
+        console.log(err);
+        return next();
+    }
+})
+
+
+module.exports = router;

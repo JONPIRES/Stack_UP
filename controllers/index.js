@@ -1,5 +1,5 @@
 module.exports = {
-    musicians: require('./posts'),
+    posts: require('./posts'),
     users: require('./users')
 }
 
