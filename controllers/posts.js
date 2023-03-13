@@ -17,7 +17,7 @@ try{
 }
 })
 
-router.post('/post', async (req,res,next)=>{
+router.post('/newPost', async (req,res,next)=>{
     try{
         const newPost = await Posts.create(req.body)
         console.log (newPost)
