@@ -48,17 +48,34 @@ router.post('/login', async(req, res, next) => {
 
 
 
-router.post('/signUp', async (req,res,next)=>{
-    try{
-        const newUser = await Posts.create(req.body)
-        console.log (newPost)
-        res.redirect('/')
-        return res.redirect('/index')
-    }catch(err){
-        console.log(err)
-        return next()
+router.post('/signup', async(req, res, next) => {
+    try {
+        // set the usersInfo variable to what the user sent you in their form
+        const usersInfo = req.body;
+        console.log(usersInfo);
+        // exists is just validating whether or not this user exists in the database. If they do, we don't create another one so we're going to just redirect them to the login page
+        const userFound = await Users.exists({email: usersInfo.email});
+        console.log(userFound);
+        if(userFound) {
+            return res.redirect('/login');
+        } 
+        // This is how many rounds of salt are added
+        let salt = await bcrypt.genSalt(12);
+        console.log(`My salt is ${salt}`);
+        // create a hash
+        const hash = await bcrypt.hash(usersInfo.password, salt);
+        console.log(`My hash is ${hash}`)
+        usersInfo.password = hash;
+        const newUser = await Users.create(usersInfo);
+        console.log(newUser);
+        return res.redirect('/posts');
+    } catch(err) {
+        console.log(err);
+        return next();
     }
-})
+});
+
+
 
 
 
