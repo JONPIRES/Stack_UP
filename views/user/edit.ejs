@@ -1,0 +1,20 @@
+<div>
+    <h1>Edit <%= user.fName %> <%= user.lName %> </h1>
+
+    <label for="username">Username:</label>
+        <input type="text" id="username" name="username" value="<%= user.username %>">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="<%= user.email %>">
+
+        <label for="fName">First Name:</label>
+        <input type="text" id="fName" name="fName" value="<%= user.fName %>">
+
+        <label for="lName">Last Name:</label>
+        <input type="text" id="lName" name="lName" value="<%= user.lName %>">
+
+        <label for="img">Image:</label>
+        <input type="text" id="img" name="img" value="<%= user.img %>">
+
+    <button type="submit"> Save Changes </button>
+</div>
