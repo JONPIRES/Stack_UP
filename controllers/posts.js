@@ -8,8 +8,11 @@ const { Posts } = require('../models');
 
 router.get('/', async (req,res,next)=>{
 try{
-    const posts = await Posts.find({})
-    res.render('posts/index.ejs', {posts:posts} )
+    if(req.session.user){
+        const posts = await Posts.find({})
+        res.render('posts/index.ejs', {posts:posts} )
+    }
+    res.redirect('/users/signin')
 
 }catch(err){
     console.log(err)
