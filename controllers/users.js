@@ -63,7 +63,8 @@ router.post('/signup', async(req, res, next) => {
         const userFound = await Users.exists({email: usersInfo.email});
         console.log(userFound);
         if(userFound) {
-            return res.redirect('/login');
+
+            res.redirect('/users/signin');
         } 
         // This is how many rounds of salt are added
         let salt = await bcrypt.genSalt(12);
@@ -80,8 +81,6 @@ router.post('/signup', async(req, res, next) => {
         return next();
     }
 });
-
-
 
 
 

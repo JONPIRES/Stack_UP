@@ -21,8 +21,12 @@ try{
 })
 
 router.get('/newPost', (req,res)=>{
-    res.render('posts/new.ejs')
+    if(req.session.user){
+        res.render('posts/new.ejs')
+    }
+    res.redirect('/users/signin')
 })
+
 
 
 
