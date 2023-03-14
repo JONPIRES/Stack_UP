@@ -9,7 +9,7 @@ const { Posts } = require('../models');
 router.get('/', async (req,res,next)=>{
 try{
     const posts = await Posts.find({})
-    res.render('posts/index.ejs', )
+    res.render('posts/index.ejs', {posts:posts} )
 
 }catch(err){
     console.log(err)
@@ -52,7 +52,7 @@ router.get('/posts/:id', async (req, res, next) => {
 router.get('/:id/edit', async (req, res, next) => {
     try {
         const postEdit = await Posts.findById(req.params.id);
-        res.render('posts/edit.ejs', {post: postEdit})
+        res.render('posts/edit.ejs', {edit: postEdit})
     } catch(err) {
         console.log(err);
         return next();

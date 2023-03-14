@@ -12,6 +12,14 @@ router.get('/signin', (req, res) => {
     res.render('user/signin');
 });
 
+// router.get('/profile', async (req,res,next)=>{
+//     try{
+//         const user = await 
+//     }catch(err){
+//         return next()
+//     }
+// })
+
 
 router.get('/logout', (req, res) => {
     try {
