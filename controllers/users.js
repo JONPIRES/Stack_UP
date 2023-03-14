@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 const {Users} = require('../models')
 
 router.get('/signup', (req,res)=>{
-    res.render('user/signup.ejs')
+    res.render('user/signup')
 })
 
 router.get('/signin', (req, res) => {
@@ -24,7 +24,7 @@ router.get('/logout', (req, res) => {
 })
 
 
-router.post('/login', async(req, res, next) => {
+router.post('/signin', async(req, res, next) => {
     try {
         const loginAttempt = req.body;
         const userFound = await Users.findOne({username: loginAttempt.username});

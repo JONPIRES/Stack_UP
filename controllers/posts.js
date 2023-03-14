@@ -49,4 +49,16 @@ router.get('/posts/:id', async (req, res, next) => {
 })
 
 
+router.get('/:id/edit', async (req, res, next) => {
+    try {
+        const postEdit = await Posts.findById(req.params.id);
+        res.render('posts/edit.ejs', {post: postEdit})
+    } catch(err) {
+        console.log(err);
+        return next();
+    }
+})
+
+
+
 module.exports = router;
