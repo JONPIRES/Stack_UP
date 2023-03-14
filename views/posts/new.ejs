@@ -1,5 +1,5 @@
 <%- include('../partials/headAndNav') %>
-<div class="container">
+<div>
     <Form class="form" method="POST" action="/posts/newPost">
         <div>
             <label for="username">Enter username</label>
@@ -11,7 +11,13 @@
         </div>
         <div>
             <label for="industry">What industry?</label>
-            <input type="text" name="industry" id="industry">
+            <select name="industry" id="industry">
+                <option value="Technology">Technology</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Finance">Finance</option>
+                <option value="Retail">Retail</option>
+                <option value="Energy">Energy</option>
+            </select>
         </div>
         <div>
             <label for="upDown">bullish or bearish</label>
@@ -19,7 +25,7 @@
         </div>
         <div>
             <label for="prediction">Price prediction</label>
-            <input type="text" name="prediction" id="prediction">
+            <textarea name="prediction" id="prediction" rows="4" cols="50"></textarea>
         </div>
         <input type="submit" value="Submit new post">
     </Form>
