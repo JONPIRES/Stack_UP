@@ -1,0 +1,20 @@
+<%- include('../partials/headAndNav') %>
+<div class="container">
+
+    <div class="card align-items-center text-center my-2 py-2">
+        <img src= <%= posts.img %> class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= posts.username %></h5>
+          <p class="card-text">industry: <%= posts.industry %></p>
+          <a href="/posts/<%= post._id%>/edit" class="btn btn-primary">Edit</a>
+          <form class="my-2 py-2" method="POST" action="/posts/<%= post._id %>?_method=DELETE">
+            <input class="btn btn-primary" type="submit" value="Delete Me">
+          </form>
+        </div> 
+      </div>
+</div>
+
+
+
+
+<%- include('../partials/footer') %>
