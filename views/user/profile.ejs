@@ -1,0 +1,23 @@
+<%- include('./partials/headAndNav') %>
+
+<div>
+    <h1>Profile</h1>
+
+    <img src="<%= user.profileImage %>" alt="Profile Image">
+
+    <p>Name: <%= user.fName %> <%= user.lName %></p>
+    <p>Username: <%= user.username %></p>
+    <p>Email: <%=user.email %></p>
+
+    <!-- Edit Button -->
+    <a href="/profile/edit">Edit Profile</a>
+
+    <!-- Delete Button -->
+    <form method="POST" action="/profile/delete">
+        <input type="hidden" name="userId" id="<%= user._id %>">
+        <button type="submit">Delete This Profile</button>
+    </form>
+<!-- Havn't Fully Finished Button isn't Connected and to user id -->
+</div>
+
+<%- include('./partials/footer') %>
