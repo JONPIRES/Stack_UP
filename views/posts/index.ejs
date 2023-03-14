@@ -1,3 +1,18 @@
 <%- include('../partials/headAndNav') %>
-
+<div class="row align-items-center row-cols-auto">
+    <% for (let i = 0; i < posts.length; i++) { %>
+        <div class="container text-center">
+                <div class="container my-2 py-2">
+                    <div class="card" style="width: 18rem;">
+                        <img src= <%= posts[i].img %> class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title"><%= posts[i].name %></h5>
+                          <p class="card-text">type: <%= posts[i].type %></p>
+                          <a href="/posts/<%= posts[i]._id %>" class="btn btn-primary">See post</a>
+                        </div> 
+                      </div>
+                </div>
+            </div>
+    <% } %>
+    </div>
 <%- include('../partials/footer') %>
