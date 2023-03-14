@@ -20,13 +20,17 @@ try{
 }
 })
 
-router.get('/newPost', (req,res)=>{
-    if(req.session.user){
-        res.render('posts/new.ejs')
-    }
-    res.redirect('/users/signin')
+router.get('/newPost', async (req,res, next)=>{
+        try{
+            if(req.session.user){
+            return   await  res.render('posts/new.ejs')
+            }
+            res.redirect('/users/signin')
+        }catch(err){
+            console.log(err)
+            return next()
+        }
 })
-
 
 
 
