@@ -5,18 +5,23 @@ const bcrypt = require('bcryptjs');
 const {Users} = require('../models')
 
 router.get('/signup', (req,res)=>{
+    console.log(req.session.user.username)
+
     res.render('user/signup')
 })
 
 router.get('/signin', (req, res) => {
+    console.log(req.session.user.username)
+
     res.render('user/signin');
 });
 
 router.get('/profile', async(req,res,next)=>{
    try{
        if(req.session.user){
-        const profile = await Users.find({username:req.session.user.username})
-        res.render('user/profile', {user:profile})
+        console.log(req.session.user)
+
+        res.render('user/profile', {user:req.session.user})
        }else{
         res.redirect('/users/signin')
        }
@@ -26,6 +31,7 @@ router.get('/profile', async(req,res,next)=>{
     next()
    }
 })
+
 
 
 router.get('/logout', (req, res) => {
@@ -50,7 +56,7 @@ router.post('/signin', async(req, res, next) => {
             
         delete userFound.password;
         req.session.user = userFound;
-        console.log(req.session.user)
+        console.log(req.session.user.username)
         res.redirect('/posts');
             
     } catch(err) {
@@ -88,6 +94,27 @@ router.post('/signup', async(req, res, next) => {
         return next();
     }
 });
+
+router.put('/:id/edit', async(req,res,next)=>{
+    try{
+        const editUser = await Users.findByIdAndUpdate(req.params.id, req.body)
+        res.redirect('/users/profile')
+    }catch(err){
+        console.log(err)
+       return next()
+    }
+
+})
+
+router.delete('/users/delete', async (req,res,ext0)=>{
+    try{
+        const DeleteUser = await Users.findByIdAndDelete(req.params.id)
+        res.redirect('/users/signin')
+    }catch(err){
+        console.log(err)
+        return next()
+    }
+})
 
 
 

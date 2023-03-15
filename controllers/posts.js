@@ -24,6 +24,8 @@ try{
 
 router.get('/newPost', async (req,res, next)=>{
         try{
+            console.log(req.session.user)
+
             if(req.session.user){
             return   await  res.render('posts/new.ejs')
             } else{
