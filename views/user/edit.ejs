@@ -1,7 +1,9 @@
 <div>
     <h1>Edit <%= user.fName %> <%= user.lName %> </h1>
 
-    <label for="username">Username:</label>
+<form method="POST" action="/edit/<%= user.id %>"></form>
+
+        <label for="username">Username:</label>
         <input type="text" id="username" name="username" value="<%= user.username %>">
 
         <label for="email">Email:</label>
