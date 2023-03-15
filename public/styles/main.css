@@ -318,3 +318,65 @@
 
 
   /* end trending stocks in home.ejs page */
+
+/* show.ejs style  */
+
+  
+.post-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .post-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    padding: 10px;
+    width: 300px;
+  }
+  
+  .post-card img {
+    border-radius: 4px;
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+  }
+  
+  .post-card h5 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .post-card p {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+  
+  .post-card a.btn {
+    color: #fff;
+    margin-right: 10px;
+    text-decoration: none;
+  }
+  
+  .post-card a.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .post-card button.btn {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .post-card button.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    margin-top: 10px;
+  }
+  
+  
+/* show ejs style end */

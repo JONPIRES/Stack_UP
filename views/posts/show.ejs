@@ -1,32 +1,19 @@
 <%- include('../partials/headAndNav') %>
-<<<<<<< HEAD
-<div class="container">
-    <div class="row">
-      <div class="card">
-        <img src="<%= posts.img %>" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"><%= posts.username %></h5>
-          <p class="card-text">Industry: <%= posts.industry %></p>
-          <a href="/posts/<%= posts._id %>/edit" class="btn btn-primary">Edit</a>
-          <form method="POST" action="/posts/<%= posts._id %>?_method=DELETE" class="delete-form">
-            <button class="btn btn-danger" type="submit">Delete Me</button>
-=======
-<div>
-
-    <div>
-        <img src= <%= posts.img %> class="card-img-top" alt="...">
-        <div>
-          <h5><%= posts.username %></h5>
-          <p>industry: <%= posts.industry %></p>
-          <a href="/posts/<%= posts._id%>/edit" class="btn">Edit</a>
-          <form method="POST" action="/posts/<%= posts._id %>?_method=DELETE">
-            <input class="btn" type="submit" value="Delete Me">
->>>>>>> 83ae06247910a2b63f5bfae43358cecb8628d96b
-          </form>
-        </div>
+<div class="post-container">
+    <div class="post-card">
+      <img src="<%= posts.img %>" alt="...">
+      <div class="post-content">
+        <h5><%= posts.username %></h5>
+        <p>Industry: <%= posts.industry %></p>
+        <a href="/posts/<%= posts._id %>/edit" class="btn btn-primary">Edit</a>
+        <form method="POST" action="/posts/<%= posts._id %>?_method=DELETE">
+          <button class="btn btn-danger" type="submit">Delete</button>
+        </form>
       </div>
     </div>
   </div>
+  
+  
   
 
 <%- include('../partials/footer') %>
