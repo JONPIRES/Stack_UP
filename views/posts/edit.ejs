@@ -1,6 +1,6 @@
 <%- include('../partials/headAndNav') %>
 <div>
-    <Form class="form" method="POST" action="/posts<%= edit._id%>?_method=PUT">
+    <Form class="form" method="POST" action="/posts<%= edit._id/edit%>?_method=PUT">
         <div>
             <label for="username">Enter username</label>
             <input type="text" name="username" value=<%= edit.username%> id="username">

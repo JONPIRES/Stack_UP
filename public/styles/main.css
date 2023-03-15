@@ -318,3 +318,27 @@
 
 
   /* end trending stocks in home.ejs page */
+
+/* show.ejs style  */
+
+  
+.post-card {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 10rem;
+    text-align: center;
+  }
+  h5, p {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+/* show ejs style end */
