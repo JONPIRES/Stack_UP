@@ -1,19 +1,21 @@
 <%- include('../partials/headAndNav') %>
-<div class="container">
-    <div class="row">
-      <div class="card">
-        <img src="<%= posts.img %>" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"><%= posts.username %></h5>
-          <p class="card-text">Industry: <%= posts.industry %></p>
+<div class="post-card">
+    <img src="<%= posts.img %>" alt="...">
+    <h5><%= posts.username %></h5>
+    <p>Company Name: <%= posts.compName %></p>
+    <p>Industry: <%= posts.industry %></p>
+    <p>Bullish or Bearish: <%= posts.upDown %></p>
+    <p>Prediction: <%= posts.prediction %></p>
+    <div class="btn-group">
+        <form method="POST" action="/posts/<%= posts._id %>?_method=DELETE">
           <a href="/posts/<%= posts._id %>/edit" class="btn btn-primary">Edit</a>
-          <form method="POST" action="/posts/<%= posts._id %>?_method=DELETE" class="delete-form">
-            <button class="btn btn-danger" type="submit">Delete Me</button>
-          </form>
-        </div>
-      </div>
+        <button class="btn btn-danger" type="submit">Delete</button>
+      </form>
     </div>
   </div>
+  
+  
+  
   
 
 <%- include('../partials/footer') %>
