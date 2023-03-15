@@ -12,7 +12,9 @@ try{
         const posts = await Posts.find({})
         res.render('posts/index.ejs', {posts:posts} )
     }
-    res.redirect('/users/signin')
+    else{
+        res.redirect('/users/signin')
+    }
 
 }catch(err){
     console.log(err)
@@ -24,13 +26,34 @@ router.get('/newPost', async (req,res, next)=>{
         try{
             if(req.session.user){
             return   await  res.render('posts/new.ejs')
+            } else{
+                res.redirect('/users/signin')
             }
-            res.redirect('/users/signin')
         }catch(err){
             console.log(err)
-            return next()
         }
 })
+
+
+router.get('/:id', async (req, res, next) => {
+    try {
+        if(req.session.user){
+            const post = await Posts.findById(req.params.id);
+            console.log(post);
+            const context = {
+                posts: post
+            }
+            res.render('posts/show.ejs', context);
+        } else{
+            res.redirect('/users/signin')
+        }
+    } catch(err) {
+        console.log(err);
+        return next();
+    }
+})
+
+
 
 
 
@@ -45,19 +68,7 @@ router.post('/newPost', async (req,res,next)=>{
     }
 })
 
-router.get('/posts/:id', async (req, res, next) => {
-    try {
-        const post = await Posts.findById(req.params.id);
-        console.log(post);
-        const context = {
-            post: post
-        }
-        res.render('posts/show.ejs', context);
-    } catch(err) {
-        console.log(err);
-        return next();
-    }
-})
+
 
 
 router.get('/:id/edit', async (req, res, next) => {
