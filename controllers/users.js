@@ -5,13 +5,11 @@ const bcrypt = require('bcryptjs');
 const {Users} = require('../models')
 
 router.get('/signup', (req,res)=>{
-    console.log(req.session.user.username)
 
     res.render('user/signup')
 })
 
 router.get('/signin', (req, res) => {
-    console.log(req.session.user.username)
 
     res.render('user/signin');
 });
