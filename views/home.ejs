@@ -1,31 +1,68 @@
 <%- include('./partials/headAndNav') %>
+
+
 <!-- <body>
-    <div id="stocks">
-        <h1>Trending Stocks</h1>
-        <ul></ul>
-      </div>
+    <h1>Live Stock Prices</h1>
+    <div class="stock-container"></div>
+      
+      
       
       <script>
-        const url = 'https://yahoo-finance90.p.rapidapi.com/';
-      
-        const options = {
-          method: 'GET',
-          headers: {
-            'X-RapidAPI-Key': '7ab49f2cf4mshccb10468dd306b3p1ac0f5jsnbfb533903b7f',
-            'X-RapidAPI-Host': 'yahoo-finance90.p.rapidapi.com'
-          }
-        };
-      
+
+const symbols = ['AAPL', 'AMZN'];
+const apiUrl = 'https://yahoo-finance15.p.rapidapi.com/api/yahoo/qu/quote/';
+const apiKey = '7ab49f2cf4mshccb10468dd306b3p1ac0f5jsnbfb533903b7f';
+
+const options = {
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': apiKey,
+    'X-RapidAPI-Host': 'yahoo-finance15.p.rapidapi.com'
+  }
+};
+
+const stockContainer = document.querySelector('.stock-container');
+
+symbols.forEach(symbol => {
+  const url = apiUrl + symbol;
+  fetch(url, options)
+    .then(res => res.json())
+    .then(json => {
+      const stockDiv = document.createElement('div');
+      stockDiv.classList.add('stock');
+      stockDiv.innerHTML = `
+        <h2>${json.quoteType?.longName || symbol}</h2>
+        <p>Symbol: ${json.symbol}</p>
+        <p>Price: $<span class="price-${symbol}">${json.regularMarketPrice.raw.toFixed(2)}</span></p>
+        <p>Change: <span class="change-${symbol}">${json.regularMarketChange.raw.toFixed(2)} (${json.regularMarketChangePercent.raw.toFixed(2)}%)</span></p>
+      `;
+      stockContainer.appendChild(stockDiv);
+      setInterval(() => {
         fetch(url, options)
-          .then(response => response.json())
-          .then(data => {
-            const stocks = document.getElementById('stocks');
-            const trendingQuotes = data.finance.result[0].quotes.filter(q => q.trending);
-            stocks.innerHTML = '<ul>' + trendingQuotes.map(q => `<li>${q.symbol}: ${q.regularMarketPrice}</li>`).join('') + '</ul>';
+          .then(res => res.json())
+          .then(json => {
+            const priceSpan = document.querySelector(`.price-${symbol}`);
+            const changeSpan = document.querySelector(`.change-${symbol}`);
+            const price = json.regularMarketPrice.raw.toFixed(2);
+            const change = json.regularMarketChange.raw.toFixed(2);
+            const changePercent = json.regularMarketChangePercent.raw.toFixed(2);
+            priceSpan.innerText = price;
+            changeSpan.innerText = `${change} (${changePercent}%)`;
+            if (change > 0) {
+              priceSpan.classList.add('price-up');
+            } else if (change < 0) {
+              priceSpan.classList.add('price-down');
+            }
           })
-          .catch(error => console.error(error));
-      </script>
+          .catch(err => console.error('error:' + err));
+      }, 5000); // Update every 5 seconds
+    })
+    .catch(err => console.error('error:' + err));
+});
+
+
+      </script> -->
       
 </body>
-</html> -->
+</html>
 <%- include('./partials/footer') %>
