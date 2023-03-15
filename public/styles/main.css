@@ -289,3 +289,33 @@
     justify-content: center;
 }
   /* end index.ejs */
+
+
+  /* start trending stocks in home.ejs page */
+  #stocks {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 10rem;
+  }
+  
+  #stocks h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 50px;
+  }
+  
+  #stocks ul {
+    list-style: none;
+    padding: 0;
+    margin: 50px 0;
+  }
+  
+  #stocks li {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+
+
+  /* end trending stocks in home.ejs page */

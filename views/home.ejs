@@ -1,3 +1,31 @@
 <%- include('./partials/headAndNav') %>
-
+<!-- <body>
+    <div id="stocks">
+        <h1>Trending Stocks</h1>
+        <ul></ul>
+      </div>
+      
+      <script>
+        const url = 'https://yahoo-finance90.p.rapidapi.com/';
+      
+        const options = {
+          method: 'GET',
+          headers: {
+            'X-RapidAPI-Key': '7ab49f2cf4mshccb10468dd306b3p1ac0f5jsnbfb533903b7f',
+            'X-RapidAPI-Host': 'yahoo-finance90.p.rapidapi.com'
+          }
+        };
+      
+        fetch(url, options)
+          .then(response => response.json())
+          .then(data => {
+            const stocks = document.getElementById('stocks');
+            const trendingQuotes = data.finance.result[0].quotes.filter(q => q.trending);
+            stocks.innerHTML = '<ul>' + trendingQuotes.map(q => `<li>${q.symbol}: ${q.regularMarketPrice}</li>`).join('') + '</ul>';
+          })
+          .catch(error => console.error(error));
+      </script>
+      
+</body>
+</html> -->
 <%- include('./partials/footer') %>
