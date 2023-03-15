@@ -2,5 +2,14 @@
 <footer>
     <h1>this is a footer</h1>
 </footer>
+<script>
+    document.querySelector("#search-icons").onclick = () => {
+  document.querySelector("#search-form").classList.toggle("active");
+};
+document.querySelector("#close").onclick = () => {
+  document.querySelector("#search-form").classList.remove("active");
+};
+
+</script>
 </body>
 </html>

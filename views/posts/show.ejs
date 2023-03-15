@@ -1,13 +1,13 @@
 <%- include('../partials/headAndNav') %>
-<div>
+<div class="container">
 
-    <div>
+    <div class="row">
         <img src= <%= posts.img %> class="card-img-top" alt="...">
         <div>
           <h5><%= posts.username %></h5>
           <p>industry: <%= posts.industry %></p>
-          <a href="/posts/<%= post._id%>/edit" class="btn">Edit</a>
-          <form method="POST" action="/posts/<%= post._id %>?_method=DELETE">
+          <a href="/posts/<%= posts._id%>/edit" class="btn">Edit</a>
+          <form method="POST" action="/posts/<%= posts._id %>?_method=DELETE">
             <input class="btn" type="submit" value="Delete Me">
           </form>
         </div> 
