@@ -61,7 +61,7 @@ router.post('/newPost', async (req,res,next)=>{
     try{
         const newPost = await Posts.create(req.body)
         console.log (newPost)
-        res.redirect('/posts')
+        res.redirect('/posts', {user: req.session.user})
     }catch(err){
         console.log(err)
         return next()
