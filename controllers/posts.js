@@ -56,6 +56,17 @@ router.get('/:id', async (req, res, next) => {
 })
 
 
+router.get('/:id/edit', async (req, res, next) => {
+    try {
+        const postEdit = await Posts.findById(req.params.id);
+        res.render('posts/edit.ejs', {edit: postEdit})
+    } catch(err) {
+        console.log(err);
+        return next();
+    }
+})
+
+
 
 
 
@@ -70,18 +81,25 @@ router.post('/newPost', async (req,res,next)=>{
     }
 })
 
-
-
-
-router.get('/:id/edit', async (req, res, next) => {
-    try {
-        const postEdit = await Posts.findById(req.params.id);
-        res.render('posts/edit.ejs', {edit: postEdit})
-    } catch(err) {
-        console.log(err);
-        return next();
+router.put('/:id/edit', async(req,res,next)=>{
+    try{
+        const editPost = await Posts.findByIdAndUpdate(req.params.id, req.body)
+        res.redirect(`/posts/${req.params.id}`)
+    }catch(err){
+        console.log(err)
+        return next()
     }
 })
+
+router.delete('/:id', async(req,res,next)=>{
+    const deletePost = await Posts.findByIdAndDelete(req.params.id)
+    res.redirect('/posts')
+})
+
+
+
+
+
 
 
 
