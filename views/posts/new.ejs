@@ -2,15 +2,18 @@
 <div>
     <Form class="form" method="POST" action="/posts/newPost">
         <div>
-            <label for="username">Enter username</label>
-            <h1><%= user.username %></h1>
+            <h2><%= user.username %></h2>
         </div>
         <div>
-            <label for="compName">Enter compName</label>
+            <label for="image">image</label>
+            <input type="text" name="img" id="image">
+        </div>
+        <div>
+            <label for="compName">Company</label>
             <input type="text" name="compName" id="compName">
         </div>
         <div>
-            <label for="industry">What industry?</label>
+            <label for="industry">Industry</label>
             <select name="industry" id="industry" >
                 <option value="Technology">Technology</option>
                 <option value="Healthcare">Healthcare</option>
@@ -20,11 +23,14 @@
             </select>
         </div>
         <div>
-            <label for="upDown">bullish or bearish</label>
-            <input type="text" name="upDown" id="upDown">
+            <label for="upDown">Direction</label>
+            <select name="upDown" id="upDown" >
+                <option value="Bullish">Bullish</option>
+                <option value="Bearish">Bearish</option>
+            </select>
         </div>
         <div>
-            <label for="prediction">Price prediction</label>
+            <label for="prediction">Prediction</label>
             <textarea name="prediction" id="prediction" rows="4" cols="50"></textarea>
         </div>
         <input type="submit" value="Submit new post">
