@@ -34,7 +34,7 @@ app.use(
 
 
 app.get('/', (req,res) =>{
-    res.render('home')
+    res.render('home', {user:req.session.user})
 })
 
 app.use('/posts', posts)
