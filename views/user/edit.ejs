@@ -1,4 +1,4 @@
-<%- include('./partials/headAndNav') %>
+<%- include('../partials/headAndNav' {user:user}) %>
 
 <div>
     <h1>Edit <%= user.fName %> <%= user.lName %> </h1>
@@ -23,7 +23,7 @@
         <label for="img">Image:</label>
         <input type="text" id="img" name="img" value="<%= user.img %>">
 
-    <button type="submit"> Save Changes </button>
+    <button class="btn btn-danger" type="submit"> Save Changes </button>
 </form>
 </div>
 
