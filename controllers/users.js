@@ -17,7 +17,7 @@ router.get('/signin', (req, res) => {
 router.get('/profile', async(req,res,next)=>{
    try{
        if(req.session.user){
-        console.log(req.session.user)
+        // console.log(req.session.user)
 
         res.render('user/profile', {user:req.session.user})
        }else{
@@ -28,6 +28,11 @@ router.get('/profile', async(req,res,next)=>{
     console.log(err)
     next()
    }
+})
+
+router.get('/:id/edit', async (req,res,next)=>{
+    console.log(req.session.user)
+    res.render('user/edit.ejs', {user: req.session.user})
 })
 
 
@@ -54,7 +59,7 @@ router.post('/signin', async(req, res, next) => {
             
         delete userFound.password;
         req.session.user = userFound;
-        console.log(req.session.user.username)
+        console.log(req.session.user.id)
         res.redirect('/posts');
             
     } catch(err) {
@@ -74,7 +79,6 @@ router.post('/signup', async(req, res, next) => {
         const userFound = await Users.exists({email: usersInfo.email});
         console.log(userFound);
         if(userFound) {
-
             res.redirect('/users/signin');
         } 
         // This is how many rounds of salt are added
@@ -92,10 +96,12 @@ router.post('/signup', async(req, res, next) => {
         return next();
     }
 });
-
+// action needs to be for users/edit
 router.put('/:id/edit', async(req,res,next)=>{
     try{
         const editUser = await Users.findByIdAndUpdate(req.params.id, req.body)
+        console.log(editUser)
+        req.session.user = editUser
         res.redirect('/users/profile')
     }catch(err){
         console.log(err)
