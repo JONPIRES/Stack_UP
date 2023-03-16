@@ -18,7 +18,6 @@ router.get('/profile', async(req,res,next)=>{
    try{
        if(req.session.user){
         // console.log(req.session.user)
-
         res.render('user/profile', {user:req.session.user})
        }else{
         res.redirect('/users/signin')
@@ -99,8 +98,9 @@ router.post('/signup', async(req, res, next) => {
 // action needs to be for users/edit
 router.put('/:id/edit', async(req,res,next)=>{
     try{
-        const editUser = await Users.findByIdAndUpdate(req.params.id, req.body)
-        console.log(editUser)
+        const editUser = await Users.findByIdAndUpdate(req.params.id, req.body,{new:true})
+        console.log("this is the new user",editUser ) 
+        
         req.session.user = editUser
         res.redirect('/users/profile')
     }catch(err){
