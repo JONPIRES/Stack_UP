@@ -160,13 +160,13 @@
     -webkit-appearance: none;
   }
   
-  #search-form label {
-    color: #fff;
+  #search-form button {
+    color: rgb(0, 0, 0);
     cursor: pointer;
     font-size: 3rem;
   }
   
-  #search-form label:hover {
+  #search-form button:hover {
     color: var(--primary);
   }
   
