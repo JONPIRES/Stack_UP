@@ -108,7 +108,7 @@ router.put('/:id/edit', async(req,res,next)=>{
 
 })
 
-router.delete('/users/delete', async (req,res,ext0)=>{
+router.delete('/:id/delete', async (req,res,ext0)=>{
     try{
         const DeleteUser = await Users.findByIdAndDelete(req.params.id)
         res.redirect('/users/signin')

@@ -1,13 +1,15 @@
-<%- include('../partials/headAndNav',{user:user}) %>
+<%- include('../partials/headAndNav') %>
 <div>
     <Form class="form" method="POST" action="/posts/newPost">
         <div>
             <h2><%= user.username %></h2>
+            <input type="hidden" name="username" value="<%= user.username %>" id="compName">
+
         </div>
-        <div>
+        <!-- <div>
             <label for="image">image</label>
             <input type="text" name="img" id="image">
-        </div>
+        </div> -->
         <div>
             <label for="compName">Company</label>
             <input type="text" name="compName" id="compName">
