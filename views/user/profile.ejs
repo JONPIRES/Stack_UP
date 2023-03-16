@@ -1,18 +1,20 @@
 <%- include('../partials/headAndNav') %>
 
-<div>
+<div class="post-card">
     <h1>Profile</h1>
 
-    <p>Name: <%= user.fName %> <%= user.lName %></p>
-    <p>Username: <%= user.username %></p>
-    <p>Email: <%=user.email %></p>
-    <p>Date of Birth <%= user.dob %></p>
+    <h2>Username: <%= user.username %></h2>
+    <h2>Name: <%= user.fName %> <%= user.lName %></h2>
+    <h2>Email: <%= user.email %></h2>
+       
+<!-- Need to add Img and DOB -->
+
  
     <!-- Edit Button -->
-    <a href="/profile/edit">Edit Profile</a>
+    <a href="/users/<%= user._id %>/edit">Edit Profile</a>
 
     <!-- Delete Button -->
-    <form method="POST" action="/profile/delete">
+    <form method="POST" action="/profile/delete?_method=DELETE">
         <input type="hidden" name="userId" id="<%= user._id %>">
         <button type="submit">Delete This Profile</button>
     </form>
