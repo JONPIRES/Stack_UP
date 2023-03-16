@@ -292,31 +292,40 @@
 
 
   /* start trending stocks in home.ejs page */
-  .stock-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+  #data {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ccc;
+    padding: 20px;
+    margin: 50px auto;
+    max-width: 600px;
     margin-top: 10rem;
   }
   
-  .stock {
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 10px;
+  /* Style for the header */
+  #data h1 {
+    color: #333;
+    font-size: 30px;
+    margin-bottom: 20px;
     text-align: center;
-    min-width: 200px;
   }
   
-  .price-up {
-    color: green;
+  /* Style for the JSON data */
+  pre {
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow: auto;
+    padding: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
   }
   
-  .price-down {
-    color: red;
-  }
-
-
+  
+  
   /* end trending stocks in home.ejs page */
 
 /* show.ejs style  */
@@ -342,3 +351,80 @@
   }
   
 /* show ejs style end */
+
+
+/* media queries */
+
+
+@media (max-width: 768px) {
+    html {
+        font-size: 50%;
+        }
+    
+    header .icons #menu-bars {
+      display: inline-block;
+    }
+  
+    header .navbar {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+      border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+      padding: 1rem;
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+  
+    header .navbar.active {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  
+    header .navbar a {
+      display: block;
+      padding: 1.5rem;
+      margin: 1rem;
+      font-size: 2rem;
+      background: #eee;
+    }
+  
+    #search-form #search-box {
+      width: 90%;
+      margin: 0 1rem;
+    }
+    section {
+        padding: 1rem 5%;
+        }
+        
+        .sub-heading {
+        font-size: 1.8rem;
+        padding-top: 2rem;
+        }
+        
+        .heading {
+        font-size: 2.5rem;
+        }
+        
+        .btn {
+        font-size: 1.4rem;
+        padding: 0.8rem 2rem;
+        }
+        
+        form {
+        width: auto;
+        font-size: 14px;
+        margin-top: 5rem;
+        }
+ }
+
+ @media(max-width: 1030px) and (min-width: 781px) {
+    html{
+        font-size: 60%;
+    }
+    
+    form {
+      width: auto;
+    }
+  }
+  
