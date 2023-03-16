@@ -21,9 +21,7 @@ router.get('/profile', async(req,res,next)=>{
         res.render('user/profile', {user:req.session.user})
        }else{
         res.redirect('/users/signin')
-       }
-
-   }catch(err){
+       }}catch(err){
     console.log(err)
     next()
    }
