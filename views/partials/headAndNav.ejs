@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Nunito:wght@200;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Stack_up</title>
+</head>
+<body>
+    <!-- head and navbar start -->
+    <header>
+        <a href="#" class="logo"><i class="fas fa-untensils">Stack_up</i></a>
+  
+        <nav class="navbar">
+          <a class="active" href="http://localhost:4000/">Home</a>
+          <% if (user) { %>
+          <a href="http://localhost:4000/posts">posts</a>
+          <a href="http://localhost:4000/posts/newPost">CreatePost</a>
+          <a href="http://localhost:4000/users/profile">profile</a>
+          <a href="http://localhost:4000/users/logout">logout</a>
+          <% } else { %>
+          <a href="http://localhost:4000/users/signup">SignUp</a>
+          <a href="http://localhost:4000/users/signin">SignIn</a>
+          <% } %>
+        </nav>
+  
+        <div class="icons">
+          <i class="fas fa-bars" id="menu-bars"></i>
+          <i class="fas fa-search" id="search-icons"></i>
+          
+        </div>
+      </header>
+
+      <!--search for -->
+    <form action="" id="search-form">
+        <input
+          type="text search-button"
+          placeholder="search here...."
+          name="s"
+          id="search-box"
+        />
+        <button for="search-box" type="submit" class="fa fa-search"></button>
+        <i class="fas fa-times" id="close"></i>
+      </form>
+
+
+    
+      
+

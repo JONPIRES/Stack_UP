@@ -1,0 +1,42 @@
+<%- include('../partials/headAndNav') %>
+<div>
+    <Form class="form" method="POST" action="/posts/newPost">
+        <div>
+            <h2><%= user.username %></h2>
+            <input type="hidden" name="username" value="<%= user.username %>" id="compName">
+
+        </div>
+        <!-- <div>
+            <label for="image">image</label>
+            <input type="text" name="img" id="image">
+        </div> -->
+        <div>
+            <label for="compName">Company</label>
+            <input type="text" name="compName" id="compName">
+        </div>
+        <div>
+            <label for="industry">Industry</label>
+            <select name="industry" id="industry" >
+                <option value="Technology">Technology</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Finance">Finance</option>
+                <option value="Retail">Retail</option>
+                <option value="Energy">Energy</option>
+            </select>
+        </div>
+        <div>
+            <label for="upDown">Direction</label>
+            <select name="upDown" id="upDown" >
+                <option value="Bullish">Bullish</option>
+                <option value="Bearish">Bearish</option>
+            </select>
+        </div>
+        <div>
+            <label for="prediction">Prediction</label>
+            <textarea name="prediction" id="prediction" rows="4" cols="50"></textarea>
+        </div>
+        <input type="submit" value="Submit new post">
+    </Form>
+
+</div>
+<%- include('../partials/footer') %>

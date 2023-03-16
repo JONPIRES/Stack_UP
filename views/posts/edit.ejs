@@ -1,0 +1,39 @@
+<%- include('../partials/headAndNav',{user:user}) %>
+<div>
+    <Form class="form" method="POST" action="/posts/<%= edit._id%>/edit?_method=PUT">
+        <div>
+            <label for="username">Enter username</label>
+            <input type="text" name="username" value=<%= edit.username%> id="username">
+        </div>
+        <div>
+            <label for="image">Image</label>
+            <input type="text" name="img" id="image">
+        </div>
+        <div>
+            <label for="compName">Company</label>
+            <input type="text" name="compName" value= <%= edit.compName%> id="compName">
+        </div>
+        <div>
+            <label for="industry">Industry</label>
+            <select name="industry" id="industry" value= <%= edit.industry%>>
+                <option value="Technology">Technology</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Finance">Finance</option>
+                <option value="Retail">Retail</option>
+                <option value="Energy">Energy</option>
+            </select>
+        </div>
+        <label for="upDown">Direction</label>
+            <select name="upDown" id="upDown" >
+                <option value="Bullish">Bullish</option>
+                <option value="Bearish">Bearish</option>
+            </select>
+        <div>
+            <label for="prediction">Price prediction</label>
+            <input type="text" name="prediction" value= <%= edit.prediction%> id="prediction">
+        </div>
+        <input type="submit" value="Submit new post">
+    </Form>
+
+</div>
+<%- include('../partials/footer') %>
