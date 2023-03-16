@@ -1,19 +1,32 @@
 <%- include('../partials/headAndNav',{user:user}) %>
-<div class="post-card">
-    <img src="<%= posts.img %>" alt="...">
-    <h5><%= posts.username %></h5>
-    <p>Company Name: <%= posts.compName %></p>
-    <p>Industry: <%= posts.industry %></p>
-    <p>Bullish or Bearish: <%= posts.upDown %></p>
-    <p>Prediction: <%= posts.prediction %></p>
-    <div class="btn-group">
-        <form method="POST" action="/posts/<%= posts._id %>?_method=DELETE">
-          <a href="/posts/<%= posts._id %>/edit" class="btn btn-primary">Edit</a>
-        <button class="btn btn-danger" type="submit">Delete</button>
-      </form>
+
+<% if(user.username === posts.username) { %>
+  <div class="post-card">
+      <img src="<%= posts.img %>" alt="...">
+      <h5><%= posts.username %></h5>
+      <p>Company Name: <%= posts.compName %></p>
+      <p>Industry: <%= posts.industry %></p>
+      <p>Bullish or Bearish: <%= posts.upDown %></p>
+      <p>Prediction: <%= posts.prediction %></p>
+      <div class="btn-group">
+          <form method="POST" action="/posts/<%= posts._id %>?_method=DELETE">
+            <a href="/posts/<%= posts._id %>/edit" class="btn btn-primary">Edit</a>
+          <button class="btn btn-danger" type="submit">Delete</button>
+        </form>
+      </div>
     </div>
-  </div>
-  
+    <% } else { %>
+  <div class="post-card">
+      <img src="<%= posts.img %>" alt="...">
+      <h5><%= posts.username %></h5>
+      <p>Company Name: <%= posts.compName %></p>
+      <p>Industry: <%= posts.industry %></p>
+      <p>Bullish or Bearish: <%= posts.upDown %></p>
+      <p>Prediction: <%= posts.prediction %></p>
+      <div class="btn-group">
+      </div>
+    </div>
+  <% } %>
   
   
   
