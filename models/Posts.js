@@ -12,6 +12,10 @@ const postSchema = new mongoose.Schema(
             type: String,
             required: [true, "insert Company Name"]
         },
+        img: {
+            type: String,
+            required: [true, "insert image"]
+        },
         industry:{
             type: String,
             required: [true, "Please provide your first name"]
@@ -24,7 +28,7 @@ const postSchema = new mongoose.Schema(
             type:String
         },
         comments:{
-            type:String
+            type:[]
         }
     },
     {
