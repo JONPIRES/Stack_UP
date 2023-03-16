@@ -22,18 +22,14 @@ try{
 }
 })
 
-router.get('/newPost', async (req,res, next)=>{
-        try{
+router.get('/newPost',  (req,res)=>{
             console.log(req.session.user)
 
             if(req.session.user){
-            return   await  res.render('posts/new.ejs')
+            return  res.render('posts/new.ejs', {user: req.session.user} )
             } else{
                 res.redirect('/users/signin')
             }
-        }catch(err){
-            console.log(err)
-        }
 })
 
 
@@ -46,7 +42,7 @@ router.get('/:id', async (req, res, next) => {
                 posts: post
             }
             res.render('posts/show.ejs', context);
-        } else{
+        }else{
             res.redirect('/users/signin')
         }
     } catch(err) {
@@ -84,6 +80,7 @@ router.post('/newPost', async (req,res,next)=>{
 router.put('/:id/edit', async(req,res,next)=>{
     try{
         const editPost = await Posts.findByIdAndUpdate(req.params.id, req.body)
+        console.log(editPost)
         res.redirect(`/posts/${req.params.id}`)
     }catch(err){
         console.log(err)
