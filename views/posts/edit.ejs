@@ -6,11 +6,15 @@
             <input type="text" name="username" value=<%= edit.username%> id="username">
         </div>
         <div>
-            <label for="compName">Enter compName</label>
+            <label for="image">Image</label>
+            <input type="text" name="img" id="image">
+        </div>
+        <div>
+            <label for="compName">Company</label>
             <input type="text" name="compName" value= <%= edit.compName%> id="compName">
         </div>
         <div>
-            <label for="industry">What industry?</label>
+            <label for="industry">Industry</label>
             <select name="industry" id="industry" value= <%= edit.industry%>>
                 <option value="Technology">Technology</option>
                 <option value="Healthcare">Healthcare</option>
@@ -19,10 +23,11 @@
                 <option value="Energy">Energy</option>
             </select>
         </div>
-        <div>
-            <label for="upDown">bullish or bearish</label>
-            <input type="text" name="upDown" value= <%= edit.upDown%> id="upDown">
-        </div>
+        <label for="upDown">Direction</label>
+            <select name="upDown" id="upDown" >
+                <option value="Bullish">Bullish</option>
+                <option value="Bearish">Bearish</option>
+            </select>
         <div>
             <label for="prediction">Price prediction</label>
             <input type="text" name="prediction" value= <%= edit.prediction%> id="prediction">

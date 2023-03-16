@@ -160,13 +160,13 @@
     -webkit-appearance: none;
   }
   
-  #search-form label {
-    color: #fff;
+  #search-form button {
+    color: rgb(0, 0, 0);
     cursor: pointer;
     font-size: 3rem;
   }
   
-  #search-form label:hover {
+  #search-form button:hover {
     color: var(--primary);
   }
   
@@ -188,7 +188,7 @@
 
   form {
     width: 30%;
-    font-size: 15px;
+    font-size: 20px;
     margin: 0 auto;
     border: 2px solid #eee;
     border-radius: 5px;
@@ -215,6 +215,9 @@
     font-size: 16px;
     box-sizing: border-box;
   }
+  .form h2 {
+    text-align: center;
+  }
 
   input[type="submit"] {
     background-color: #eeb823;
@@ -228,7 +231,7 @@
   }
   select{
     font-size: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 
   
