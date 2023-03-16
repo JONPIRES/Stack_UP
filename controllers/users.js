@@ -11,7 +11,7 @@ router.get('/signup', (req,res)=>{
 
 router.get('/signin', (req, res) => {
 
-    res.render('user/signin');
+    res.render('user/signin', {user:req.session.user});
 });
 
 router.get('/profile', async(req,res,next)=>{
