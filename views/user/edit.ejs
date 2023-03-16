@@ -1,10 +1,12 @@
+<%- include('./partials/headAndNav') %>
+
 <div>
     <h1>Edit <%= user.fName %> <%= user.lName %> </h1>
 
 <form method="POST" action="/users/<%= user._id %>/edit?_method=PUT">
 
         <label for="username">Username:</label>
-        <input type="text" id="username" disabled name="username" value="<%= user.username %>">
+        <input type="text" id="username" name="username" value="<%= user.username %>">
 
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" value="<%= user.email %>">
@@ -24,3 +26,5 @@
     <button type="submit"> Save Changes </button>
 </form>
 </div>
+
+<%- include('../partials/footer') %>
