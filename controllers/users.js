@@ -6,7 +6,7 @@ const {Users} = require('../models')
 
 router.get('/signup', (req,res)=>{
 
-    res.render('user/signup')
+    res.render('user/signup', {user: req.session.user})
 })
 
 router.get('/signin', (req, res) => {
