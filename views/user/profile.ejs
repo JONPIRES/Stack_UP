@@ -1,6 +1,6 @@
 <%- include('../partials/headAndNav') %>
 
-<div>
+<div class="post-card">
     <h1>Profile</h1>
 
     <h2>Username: <%= user.username %></h2>
@@ -11,7 +11,7 @@
 
  
     <!-- Edit Button -->
-    <a href="/profile/edit">Edit Profile</a>
+    <a href="/users/<%= user._id %>/edit">Edit Profile</a>
 
     <!-- Delete Button -->
     <form method="POST" action="/profile/delete">
