@@ -148,7 +148,7 @@
     padding: 1rem 0;
     color: #fff;
     font-size: 3rem;
-    text-transform: lowercase;
+    text-transform: none;
     background: none;
   }
   
