@@ -1,10 +1,10 @@
 <div>
     <h1>Edit <%= user.fName %> <%= user.lName %> </h1>
 
-<form method="POST" action="/edit/<%= user.id %>"></form>
+<form method="POST" action="/edit/<%= user._id %>"></form>
 
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" value="<%= user.username %>">
+        <input type="text" id="username" disabled="disabled" name="username" value="<%= user.username %>">
 
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" value="<%= user.email %>">
