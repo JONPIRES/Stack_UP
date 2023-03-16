@@ -111,6 +111,7 @@ router.put('/:id/edit', async(req,res,next)=>{
 router.delete('/:id/delete', async (req,res,ext0)=>{
     try{
         const DeleteUser = await Users.findByIdAndDelete(req.params.id)
+        req.session.destroy();
         res.redirect('/users/signin')
     }catch(err){
         console.log(err)
