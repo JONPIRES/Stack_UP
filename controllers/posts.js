@@ -126,7 +126,7 @@ router.put('/:id/comment', async(req,res,next)=>{
     try{
         const post = await Posts.findById(req.params.id)
         // post doesn't need it because the const post already got it from the db
-        post.comments.push({comment:req.body.comment, username:req.body.username})
+        post.comments.push({username:req.body.username, comment:req.body.comment})
         // nnow you need to send it back with the save and that's why you do the await here and not on the push.
         await post.save()
         console.log(post)
