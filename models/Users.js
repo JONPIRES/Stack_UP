@@ -28,12 +28,12 @@ const userSchema = new mongoose.Schema(
         img: {
             type:String
         }
-        
     },
     {
         timestamps: true
     }
 );
+
 
 const Users = mongoose.model('Users', userSchema);
 

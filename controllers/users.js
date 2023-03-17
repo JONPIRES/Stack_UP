@@ -70,6 +70,7 @@ router.post('/signin', async(req, res, next) => {
 router.post('/signup', async(req, res, next) => {
     try {
         // set the usersInfo variable to what the user sent you in their form
+        
         const usersInfo = req.body;
         console.log(usersInfo);
         // exists is just validating whether or not this user exists in the database. If they do, we don't create another one so we're going to just redirect them to the login page
