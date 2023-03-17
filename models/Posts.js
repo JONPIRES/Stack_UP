@@ -28,7 +28,12 @@ const postSchema = new mongoose.Schema(
             type:String
         },
         comments:{
-            type:[]
+            auth:{
+                type:String
+            },
+            comment:{
+                type:String
+            }
         }
     },
     {
