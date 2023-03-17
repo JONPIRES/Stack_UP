@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 
-const {Users} = require('../models')
+const {Users, Posts} = require('../models')
 
 router.get('/signup', (req,res)=>{
 
@@ -70,6 +70,7 @@ router.post('/signin', async(req, res, next) => {
 router.post('/signup', async(req, res, next) => {
     try {
         // set the usersInfo variable to what the user sent you in their form
+        
         const usersInfo = req.body;
         console.log(usersInfo);
         // exists is just validating whether or not this user exists in the database. If they do, we don't create another one so we're going to just redirect them to the login page
@@ -111,6 +112,10 @@ router.put('/:id/edit', async(req,res,next)=>{
 router.delete('/:id/delete', async (req,res,ext0)=>{
     try{
         const DeleteUser = await Users.findByIdAndDelete(req.params.id)
+        // look up how to find all posts and delete the ones that I made
+
+        // const deletePosts = await Posts.find
+        
         req.session.destroy();
         res.redirect('/users/signin')
     }catch(err){
