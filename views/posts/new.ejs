@@ -1,4 +1,4 @@
-<%- include('../partials/headAndNav') %>
+<%- include('../partials/headAndNav', {user: user}) %>
 <div>
     <Form class="form" method="POST" action="/posts/newPost">
         <div>
@@ -19,7 +19,7 @@
         <div>
             <label for="industry">Industry</label>
             <select name="industry" id="industry" >
-                <option value="Tech">Technology</option>
+                <option value="Tech">Tech</option>
                 <option value="Healthcare">Healthcare</option>
                 <option value="Finance">Finance</option>
                 <option value="Retail">Retail</option>
@@ -34,12 +34,8 @@
             </select>
         </div>
         <div>
-            <label for="prediction">Prediction</label>
-            <input type="text" name="prediction" id="prediction">
-        </div>
-        <div>
-            <label for="comments">Comments</label>
-            <textarea name="comments" id="comments" rows="4" cols="50"></textarea>
+            <label for="prediction">Prediciton</label>
+            <textarea name="prediction" id="prediction" rows="4" cols="50"></textarea>
         </div>
         <input type="submit" value="Submit new post">
     </Form>

@@ -17,6 +17,7 @@
       <div class="btn-group">
           <form method="POST" action="/posts/<%= posts._id %>?_method=DELETE">
             <a href="/posts/<%= posts._id %>/edit" class="btn btn-primary">Edit</a>
+            <a href="/posts/<%= posts._id %>/comment" class="btn btn-primary">Add Comment</a>
           <button class="btn btn-danger" type="submit">Delete</button>
         </form>
       </div>

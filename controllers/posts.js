@@ -63,6 +63,16 @@ router.get('/:id/edit', async (req, res, next) => {
     }
 })
 
+router.get('/:id/comment', async (req, res, next) => {
+    try {
+        const newComment = await Posts.findById(req.params.id);
+        res.render('posts/comment.ejs', {posts: newComment, user: req.session.user})
+    } catch(err) {
+        console.log("err");
+        return next();
+    }
+})
+
 
 router.get('/search', async (req,res, next) =>{
     try{
@@ -106,6 +116,20 @@ router.put('/:id/edit', async(req,res,next)=>{
     try{
         const editPost = await Posts.findByIdAndUpdate(req.params.id, req.body)
         console.log(editPost)
+        res.redirect(`/posts/${req.params.id}`)
+    }catch(err){
+        console.log(err)
+        return next()
+    }
+})
+router.put('/:id/comment', async(req,res,next)=>{
+    try{
+        const post = await Posts.findById(req.params.id)
+        // post doesn't need it because the const post already got it from the db
+        post.comments.push({comment:req.body.comment, username:req.body.username})
+        // nnow you need to send it back with the save and that's why you do the await here and not on the push.
+        await post.save()
+        console.log(post)
         res.redirect(`/posts/${req.params.id}`)
     }catch(err){
         console.log(err)

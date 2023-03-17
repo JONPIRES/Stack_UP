@@ -1,5 +1,16 @@
 const mongoose = require('mongoose');
 
+const comSchema = new mongoose.Schema(
+    {
+        comment:{
+            type:String
+        },
+        username:{
+            type:String
+        }
+    }
+)
+
 const postSchema = new mongoose.Schema(
     {
         user: {
@@ -29,14 +40,7 @@ const postSchema = new mongoose.Schema(
         prediction: {
             type:String
         },
-        comments:{
-            comment:{
-                type:String
-            },
-            username:{
-                type:String
-            }
-        }
+        comments:[comSchema]
     },
     {
         timestamps: true

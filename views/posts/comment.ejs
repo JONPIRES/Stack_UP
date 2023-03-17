@@ -13,34 +13,19 @@
           <p>Comment: <%=posts.comments[i].comment %></p>
       <%  } %>
       <div>
-        <Form class="form" method="POST" action="/posts/<%= posts._id %>/comment?_method=PUT">
-                <input hidden type="text" value="<%=user.username %>" name="username" id="username">
-                <input hidden type="text" value="<%=user.compName %>" name="compName" id="compName">
-                <input hidden type="text" value="<%=user.img %>" name="img" id="img">
-                <input hidden type="text" value="<%=user.industry %>"  name="industry" id="industry">
-                <input hidden type="text" value="<%=user.upDown %>" name="upDown" id="upDown">
-                <input hidden type="text" value="<%=user.prediction%>" name="prediction" id="prediction">
+        <form class="f" method="POST" action="/posts/<%= posts._id %>/comment?_method=PUT">
             <div>
-                <label disabled="disabled" for="comments.username"> <%= user %> </label>
-                <input type="text" name="comments.username" id="comments.username">
+                <label  for="username"> <%= user.username %> </label>
+                <input hidden value=" <%= user.username %>" type="text" name="username" id="username">
             </div>
             <div>
-                <textarea name="comments.comment" id="comments.comment" rows="4" cols="50"></textarea>
+                <textarea name="comment" id="comment" rows="4" cols="20"></textarea>
             </div>
             <input type="submit" value="Submit new post">
-        </Form>
+        </form>
     
     </div>
 
-      </div>
-      <div class="btn-group">
-          <form method="POST" action="/posts/<%= posts._id %>?_method=DELETE">
-            <a href="/posts/<%= posts._id %>/edit" class="btn btn-primary">Edit</a>
-          <button class="btn btn-danger" type="submit">Delete</button>
-        </form>
-      </div>
-    </div>
-    <% } %>
   
   
   
