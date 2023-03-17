@@ -64,6 +64,29 @@ router.get('/:id/edit', async (req, res, next) => {
 })
 
 
+router.get('/search', async (req,res, next) =>{
+    try{
+        let mySearch;    
+        let query= req.query.s
+        query = query.toLowerCase();
+        query = (query.charAt(0).toUpperCase() + query.slice(1));
+            if (query){
+                mySearch = await Posts.find( { $or: [ { compName: query }, { industry:query } ] } )
+                console.log ('If statement') 
+                console.log (query) 
+             }
+        
+         context = {
+            posts: mySearch,
+            user: req.session.user
+        }
+        res.render('posts/index.ejs', context)
+    }
+    catch(err){
+        console.log(err);
+        return next();
+    }
+})
 
 
 

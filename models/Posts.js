@@ -6,6 +6,10 @@ const postSchema = new mongoose.Schema(
             type: mongoose.Schema.Types.ObjectId,
             ref: "Users",
         },
+        username: {
+            type: String,
+            required: [true, "insert Company Name"]
+        },
         compName: {
             type: String,
             required: [true, "insert Company Name"]
@@ -27,6 +31,9 @@ const postSchema = new mongoose.Schema(
         },
         comments:{
             comment:{
+                type:String
+            },
+            username:{
                 type:String
             }
         }

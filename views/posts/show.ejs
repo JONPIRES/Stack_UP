@@ -4,11 +4,16 @@
   <div class="post-card">
       <img src="<%= posts.img %>" alt="...">
       <h5><%= posts.username %></h5>
-      <p>Company Name: <%= posts.compName %></p>
+      <p>Company: <%= posts.compName %></p>
       <p>Industry: <%= posts.industry %></p>
-      <p>Bullish or Bearish: <%= posts.upDown %></p>
+      <p>Direction: <%= posts.upDown %></p>
       <p>Prediction: <%= posts.prediction %></p>
-      <p>Comments: <%=posts.comments %></p>
+      <div>
+        <% for (let i = 0; i < posts.comments.length; i++) { %>
+          <p>User: <%=posts.comments[i].username %></p>
+          <p>Comment: <%=posts.comments[i].comment %></p>
+      <%  } %>
+      </div>
       <div class="btn-group">
           <form method="POST" action="/posts/<%= posts._id %>?_method=DELETE">
             <a href="/posts/<%= posts._id %>/edit" class="btn btn-primary">Edit</a>
@@ -20,9 +25,9 @@
   <div class="post-card">
       <img src="<%= posts.img %>" alt="...">
       <h5><%= posts.username %></h5>
-      <p>Company Name: <%= posts.compName %></p>
+      <p>Company: <%= posts.compName %></p>
       <p>Industry: <%= posts.industry %></p>
-      <p>Bullish or Bearish: <%= posts.upDown %></p>
+      <p>Direction: <%= posts.upDown %></p>
       <p>Prediction: <%= posts.prediction %></p>
     </div>
   <% } %>

@@ -4,10 +4,10 @@
         <div>
             <h2><%= user.username %></h2>
         </div>
-        <!-- <div>
-            <label for="image">image</label>
-            <input type="text" name="img" id="image">
-        </div> -->
+        <div>
+            <label for="username"></label>
+            <input hidden type="text" value="<%=user.username %>" name="username" id="username">
+        </div>
         <div>
             <label for="compName">Company</label>
             <input type="text" name="compName" id="compName">
@@ -19,7 +19,7 @@
         <div>
             <label for="industry">Industry</label>
             <select name="industry" id="industry" >
-                <option value="Technology">Technology</option>
+                <option value="Tech">Technology</option>
                 <option value="Healthcare">Healthcare</option>
                 <option value="Finance">Finance</option>
                 <option value="Retail">Retail</option>
