@@ -69,6 +69,7 @@ router.get('/:id/edit', async (req, res, next) => {
 
 router.post('/newPost', async (req,res,next)=>{
     try{
+        req.body.user = req.session.user._id
         const newPost = await Posts.create(req.body)
         console.log (newPost)
         res.redirect('/posts')
