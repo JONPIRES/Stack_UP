@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 
-const {Users} = require('../models')
+const {Users, Posts} = require('../models')
 
 router.get('/signup', (req,res)=>{
 
@@ -111,6 +111,10 @@ router.put('/:id/edit', async(req,res,next)=>{
 router.delete('/:id/delete', async (req,res,ext0)=>{
     try{
         const DeleteUser = await Users.findByIdAndDelete(req.params.id)
+        // look up how to find all posts and delete the ones that I made
+
+        // const deletePosts = await Posts.find
+        
         req.session.destroy();
         res.redirect('/users/signin')
     }catch(err){
