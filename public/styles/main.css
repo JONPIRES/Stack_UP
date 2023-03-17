@@ -25,6 +25,12 @@
     scroll-behavior: smooth;
     box-shadow: inset 5px 5px 180px #eeb823, inset -5px -5px 180px #eeb823;
   }
+  .home-ejs{
+    margin-top: 10rem;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Courier New', Courier, monospace;
+  }
   section {
     padding: 2rem 9%;
   }
@@ -300,36 +306,9 @@
 
 
   /* start trending stocks in home.ejs page */
-  #data {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px #ccc;
-    padding: 20px;
-    margin: 50px auto;
-    max-width: 600px;
-    margin-top: 10rem;
-  }
   
-  /* Style for the header */
-  #data h1 {
-    color: #333;
-    font-size: 30px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  /* Style for the JSON data */
-  pre {
-    background-color: #f8f8f8;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    line-height: 1.5;
-    overflow: auto;
-    padding: 10px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+  .stock-data{
+    margin-top: 15rem;
   }
   
   
