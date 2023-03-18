@@ -1,16 +1,33 @@
 const mongoose = require('mongoose');
 
-
+const comSchema = new mongoose.Schema(
+    {
+        comment:{
+            type:String
+        },
+        username:{
+            type:String
+        }
+    }
+)
 
 const postSchema = new mongoose.Schema(
     {
+        user: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Users",
+        },
         username: {
             type: String,
-            required: [true, "Please provide a name"]
+            required: [true, "insert Company Name"]
         },
         compName: {
             type: String,
             required: [true, "insert Company Name"]
+        },
+        img: {
+            type: String,
+            required: [true, "insert image"]
         },
         industry:{
             type: String,
@@ -23,9 +40,7 @@ const postSchema = new mongoose.Schema(
         prediction: {
             type:String
         },
-        comments:{
-            type:String
-        }
+        comments:[comSchema]
     },
     {
         timestamps: true

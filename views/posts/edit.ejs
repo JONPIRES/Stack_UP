@@ -3,7 +3,7 @@
     <Form class="form" method="POST" action="/posts/<%= edit._id%>/edit?_method=PUT">
         <div>
             <label for="username">Enter username</label>
-            <input type="text" name="username" value=<%= edit.username%> id="username">
+            <input type="text" name="username" id="username" value=<%= edit.username%> >
         </div>
         <div>
             <label for="image">Image</label>
@@ -11,7 +11,7 @@
         </div>
         <div>
             <label for="compName">Company</label>
-            <input type="text" name="compName" value= <%= edit.compName%> id="compName">
+            <input type="text" name="compName" id="compName" value= <%= edit.compName%> >
         </div>
         <div>
             <label for="industry">Industry</label>
@@ -30,7 +30,11 @@
             </select>
         <div>
             <label for="prediction">Price prediction</label>
-            <input type="text" name="prediction" value= <%= edit.prediction%> id="prediction">
+            <input type="text" name="prediction" id="prediction" value= <%= edit.prediction%> >
+        </div>
+        <div>
+            <label for="comments">Comments</label>
+            <input type="text" name="comments" id="comments" value= <%= edit.comments%>>
         </div>
         <input type="submit" value="Submit new post">
     </Form>
