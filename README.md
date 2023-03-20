@@ -6,10 +6,23 @@ We decided to take on this project as we found it to present more of a challenge
 
 - As a user I want to be able see what stocks other people are buying and what they're saying about it
 - I want to be able to place coments to specific stocks (i.e ask questions about a certain prediction)
-- I want to be able to add my own predictions to the site
+- I want to be able to post my own predictions to the site
 - I want to be able to find predictions base on industry
-- to be able to use the site, I'll need to create an account 
-- I want to have a log in feature
+- In order to be able to use the site, I will have to sign up or sign in
+- I want to be able to comment on others posts
+
+
+This is the home page that will show stocks.
+![homepage](./README_img/homepage.png)
+
+This is the sign in page that you will need to sign into before browsing the website.
+![homepage](./README_img/signin.png)
+
+This is the post page where you can see your own and others posts.
+![homepage](./README_img/posts.png)
+
+This is the profile page that you will be able to see your profile, edit your profile, or delete it.
+![homepage](./README_img/profile.png)
 
 
                 How to use the Website?

@@ -7,19 +7,12 @@
     <h2 class="profile_username">Username: <%= user.username %></h2>
     <h2 class="profile_name">Name: <%= user.fName %> <%= user.lName %></h2>
     <h2 class="profile_email">Email: <%= user.email %></h2>
-    
-       
-<!-- Need to add Img and DOB -->
 
- 
-    <!-- Edit Button -->
-    
-    <!-- Delete Button -->
+    <!-- Edit and Delete Button -->
     <form method="POST" action="/users/<%= user._id %>/delete?_method=DELETE">
         <a href="/users/<%= user._id %>/edit" class="btn btn-danger">Edit Profile</a>
         <button class="btn btn-danger" type="submit">Delete This Profile</button>
     </form>
-<!-- Havn't Fully Finished Button isn't Connected and to user id -->
 </div>
 
-<%- include('../partials/footer') %>    
+<%- include('../partials/footer') %>
