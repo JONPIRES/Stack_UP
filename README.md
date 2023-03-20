@@ -11,7 +11,6 @@ We decided to take on this project as we found it to present more of a challenge
 - In order to be able to use the site, I will have to sign up or sign in
 - I want to be able to comment on others posts
 
-
 This is the home page that will show stocks.
 ![homepage](./README_img/homepage.png)
 
@@ -33,6 +32,28 @@ This is the profile page that you will be able to see your profile, edit your pr
 4. You can then click on the "createpost" button to create a prediction about a specific company/stock
 5. You can then click on the "posts" button to view your stock predictions that you have posted.
 6. Enjoy giving your predictions or comments on others predictions!
+
+
+Technology Used:
+- Server with express.js
+- Database with mongoDB
+- Mongoose to structure our data
+- Created controllers and Schemas for our data bases
+- We used ejs to determine how we styled and structured our website
+- Node.js for server side development
+- Bcript to encript users passwords
+- Implimented crud to the API
+- Used css to create a mobile friendly website
+
+Future Editions:
+- Be able to communicate between users
+- Be able to follow users
+- Be able to link external api with trending stocks
+- Be able to see all of specific users posts
+- Create a time out if user is inactive for a specific amount of time during their session or if their tab is closed
+- Be able to edit comments created by their own user
+
+
 
                         Credits
 Team members for this project
