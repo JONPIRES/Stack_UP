@@ -291,6 +291,9 @@
     border-radius: 5px;
     text-decoration: none;
 }
+.show-btn{
+  display: inline;
+}
 
 
 /* Styles for the container */

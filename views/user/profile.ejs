@@ -9,10 +9,13 @@
     <h2 class="profile_email">Email: <%= user.email %></h2>
 
     <!-- Edit and Delete Button -->
-    <form method="POST" action="/users/<%= user._id %>/delete?_method=DELETE">
-        <a href="/users/<%= user._id %>/edit" class="btn btn-danger">Edit Profile</a>
-        <button class="btn btn-danger" type="submit">Delete This Profile</button>
-    </form>
+    <div>
+        <form class="show-btn" method="POST" action="/users/<%= user._id %>/delete?_method=DELETE">
+            <a href="/users/<%= user._id %>/edit" class="btn btn-danger">Edit Profile</a>
+            <button class="btn btn-danger" type="submit">Delete This Profile</button>
+        </form>
+
+    </div>
 </div>
 
 <%- include('../partials/footer') %>

@@ -8,11 +8,12 @@
       <p>Direction: <%= posts.upDown %></p>
       <p>Prediction: <%= posts.prediction %></p>
         <% for (let i = 0; i < posts.comments.length; i++) { %>
+          <hr/>
           <p>User: <%=posts.comments[i].username %></p>
           <p>Comment: <%=posts.comments[i].comment %></p>
       <%  } %>
       <div>
-        <form class="f" method="POST" action="/posts/<%= posts._id %>/comment?_method=PUT">
+        <form class="card" method="POST" action="/posts/<%= posts._id %>/comment?_method=PUT">
             <div>
                 <label  for="username"> <%= user.username %> </label>
                 <input hidden value=" <%= user.username %>" type="text" name="username" id="username">
