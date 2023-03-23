@@ -12,8 +12,8 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    outline: none;
-    border: none;
+    /* outline: none; */
+    /* border: none; */
     text-transform: lowercase;
     transition: all 0.2s linear;
   }
@@ -24,6 +24,8 @@
     scroll-padding-top: 5.5rem;
     scroll-behavior: smooth;
     box-shadow: inset 5px 5px 180px #eeb823, inset -5px -5px 180px #eeb823;
+    Min-height:100vh;
+    Height:auto;
   }
   .home-ejs{
     margin-top: 10rem;
@@ -289,6 +291,9 @@
     border-radius: 5px;
     text-decoration: none;
 }
+.show-btn{
+  display: inline;
+}
 
 
 /* Styles for the container */
@@ -365,6 +370,15 @@
   font-size: 18px;
   margin-bottom: 5px;
 }
+
+<!-- .profile_img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: auto;
+} -->
+
 /* profile end */
 /* footer start */
 .footer .box-container {

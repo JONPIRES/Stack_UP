@@ -49,10 +49,17 @@ router.post('/signin', async(req, res, next) => {
     try {
         const loginAttempt = req.body;
         const userFound = await Users.findOne({username: loginAttempt.username});
-        const match = await bcrypt.compare(loginAttempt.password, userFound.password);
-        console.log(match);
-        // if statement only works if the username is correct, if the username does not exist, it thorws an error.
-        if(!match) return res.send("<h1>Email or password doesn't match!</h1>");
+        // console.log(userFound)
+        if(!userFound){
+           return res.send("<h1>Email or password doesn't match!</h1>");
+        }
+        else if(userFound){
+            const match = await bcrypt.compare(loginAttempt.password, userFound.password);
+            console.log(userFound);
+            // if statement only works if the username is correct, if the username does not exist, it thorws an error.
+            if(!match) return res.send("<h1>Email or password doesn't match!</h1>");
+        }
+
             
         delete userFound.password;
         req.session.user = userFound;

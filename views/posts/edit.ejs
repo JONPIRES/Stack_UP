@@ -7,7 +7,7 @@
         </div>
         <div>
             <label for="image">Image</label>
-            <input type="text" name="img" id="image">
+            <input type="text" name="img" value=<%= edit.img%> id="image">
         </div>
         <div>
             <label for="compName">Company</label>
@@ -32,10 +32,8 @@
             <label for="prediction">Price prediction</label>
             <input type="text" name="prediction" id="prediction" value= <%= edit.prediction%> >
         </div>
-        <div>
             <label for="comments">Comments</label>
             <input type="text" name="comments" id="comments" value= <%= edit.comments%>>
-        </div>
         <input type="submit" value="Submit new post">
     </Form>
 

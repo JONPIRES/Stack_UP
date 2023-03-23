@@ -15,7 +15,7 @@
       <%  } %>
       </div>
       <div class="btn-group">
-          <form method="POST" action="/posts/<%= posts._id %>?_method=DELETE">
+          <form class="show-btn" method="POST" action="/posts/<%= posts._id %>?_method=DELETE">
             <a href="/posts/<%= posts._id %>/edit" class="btn btn-primary">Edit</a>
             <a href="/posts/<%= posts._id %>/comment" class="btn btn-primary">Add Comment</a>
           <button class="btn btn-danger" type="submit">Delete</button>
@@ -30,6 +30,15 @@
       <p>Industry: <%= posts.industry %></p>
       <p>Direction: <%= posts.upDown %></p>
       <p>Prediction: <%= posts.prediction %></p>
+      <div>
+        <% for (let i = 0; i < posts.comments.length; i++) { %>
+          <hr/>
+          <p>User: <%=posts.comments[i].username %></p>
+          <p>Comment: <%=posts.comments[i].comment %></p>
+      <%  } %>
+      </div>
+      <a href="/posts/<%= posts._id %>/comment" class="btn btn-primary">Add Comment</a>
+
     </div>
   <% } %>
   
