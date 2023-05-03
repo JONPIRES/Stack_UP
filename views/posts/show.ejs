@@ -30,11 +30,13 @@
       <p>Industry: <%= posts.industry %></p>
       <p>Direction: <%= posts.upDown %></p>
       <p>Prediction: <%= posts.prediction %></p>
-      <div>
+       <div>
         <% for (let i = 0; i < posts.comments.length; i++) { %>
           <hr/>
           <p>User: <%=posts.comments[i].username %></p>
           <p>Comment: <%=posts.comments[i].comment %></p>
+          <p>another p</p>
+          <hr />
       <%  } %>
       </div>
       <a href="/posts/<%= posts._id %>/comment" class="btn btn-primary">Add Comment</a>
