@@ -1,5 +1,6 @@
 <%- include('../partials/headAndNav',{user:user}) %>
 
+
 <div class="post-card">
   <img src="<%= posts.img %>" alt="..." />
   <h5><%= posts.username %></h5>
@@ -27,6 +28,7 @@
           type="text"
           name="username"
           id="username" />
+
       </div>
       <div>
         <textarea name="comment" id="comment" rows="4" cols="20"></textarea>
