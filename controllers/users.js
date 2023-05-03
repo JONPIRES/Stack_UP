@@ -116,7 +116,7 @@ router.put('/:id/edit', async(req,res,next)=>{
 
 })
 
-router.delete('/:id/delete', async (req,res,ext0)=>{
+router.delete('/:id/delete', async (req,res,next)=>{
     try{
         const DeleteUser = await Users.findByIdAndDelete(req.params.id)
         // look up how to find all posts and delete the ones that I made
